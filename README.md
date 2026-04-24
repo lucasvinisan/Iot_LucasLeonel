@@ -1,293 +1,166 @@
-# Processo Seletivo – Intensivo Maker | IoT
-## Etapa Prática – Sistemas Embarcados
-
-Bem-vindo(a) à **etapa prática do processo seletivo para o Intensivo Maker | IoT**.
-
-Esta atividade tem como objetivo avaliar suas competências em **Sistemas Embarcados**, com foco em **organização de projeto, lógica de firmware e simulação de hardware**, a partir da aplicação prática dos conhecimentos adquiridos nos cursos EAD da etapa anterior.
-
-> 🎯 **Objetivo principal**  
-> Avaliar sua capacidade de **planejar, estruturar e desenvolver** uma solução funcional de sistemas embarcados, seguindo boas práticas de engenharia.
-
 ---
 
-## 🏁 Passo 0 – Antes de Tudo
-
-Se você **nunca utilizou Git ou GitHub**, não se preocupe.  
-Siga atentamente os passos abaixo — eles fazem parte do processo de aprendizagem esperado.
-
----
-
-### 1️⃣ Criação de Conta no GitHub
-
-1. Acesse: https://github.com  
-2. Clique em **Sign up**  
-3. Crie sua conta gratuita seguindo as instruções da plataforma  
-
-> 📌 O GitHub será utilizado para:
-> - Envio do seu projeto  
-> - Versionamento do código  
-> - Correção e validação automática via GitHub Actions  
-
----
-
-### 2️⃣ Instalação do Git
-
-O **Git** é a ferramenta responsável pelo controle de versões do seu código.
-
-### Windows
-Baixe e instale o **Git Bash**:  
-https://git-scm.com/downloads
-
-### Linux / macOS
-Verifique se o Git já está instalado:
-
-```bash
-git --version
-```
-> Caso não esteja, instale pelo gerenciador de pacotes do seu sistema.
-
-## ⚙ Passo 1 – Preparando o Ambiente
-
-Para desenvolver o desafio, você deverá criar uma cópia deste repositório no seu GitHub.
-
-### 1️⃣ Fork do Repositório
-No canto superior direito desta página, clique em Fork
-
-<img width="219" height="45" alt="image" src="https://github.com/user-attachments/assets/5d629626-513a-445c-ba0f-e5bb3e225187" />
-
-
-Uma cópia do repositório será criada no seu perfil do GitHub
-
-> 🔎 O Fork permite que você trabalhe de forma independente, sem alterar o repositório original do processo seletivo.
-
-### 2️⃣ Clone do Repositório
-
-No repositório do seu Fork, clique em **<> Code**
-
-<img width="149" height="52" alt="image" src="https://github.com/user-attachments/assets/abbd331b-a005-4633-89c6-afd16acbe828" />
-
-Copie a URL e execute no terminal:
-
-```bash
-git clone https://github.com/SEU_USUARIO/nome-do-repositorio.git
-cd nome-do-repositorio
-```
-
-> O comando git clone cria uma cópia local do repositório para desenvolvimento.
-
-### 3️⃣ Preparação do Ambiente de Execução
-
-Você pode executar o projeto de duas formas. Escolha apenas uma.
-
-#### 🔹 Opção A – Ambiente Python Local
-
-**Requisitos:**
-
-- Python 3.10 ou 3.11
-- pip
-
-**Instale as dependências:**
-
-```bash
-pip install -r requirements.txt
-```
-
-#### 🔹 Opção B – Dev Container (Recomendado)
-
-Este repositório inclui um Dev Container, garantindo um ambiente padronizado.
-
-**Requisitos:**
-
-- VS Code
-- Docker instalado
-- Extensão Dev Containers
-
-**Passos:**
-
-1. Abra o repositório no VS Code
-2. Clique em “Reopen in Container”
-3. Aguarde a criação automática do ambiente
-
-> ➡️ Todas as dependências serão instaladas automaticamente.
-
-## 🔐 Passo 2 – Criando sua API Key do Wokwi
-
-A simulação do projeto será executada automaticamente via GitHub Actions, utilizando o Wokwi CLI.
-
-Para isso, você precisa gerar uma API Key.
-
-1. Acesse: https://wokwi.com/dashboard/ci
-2. Faça login (Google ou GitHub)
-3. Clique em Generate API Token
-4. Copie a chave gerada (exemplo: wokwi-xxxxxxxx)
-
->⚠️ Importante
-- Nunca faça commit dessa chave
-- Ela deve ser armazenada apenas como secret no GitHub
-
-## 🔒 Passo 3 – Configurando a API Key no GitHub (Secrets)
-
-**No repositório do seu Fork:**
-
-1. Vá em Settings
-2. Acesse Secrets and variables → Actions
-3. Clique em New repository secret
-4. Nome: WOKWI_API_KEY
-5. Valor: sua chave gerada
-6. Salve
-
-> ✔️ As GitHub Actions do template já estão preparadas para usar essa variável automaticamente.
-
-## 🧠 Passo 4 – Desafio Técnico
-
-Você deverá desenvolver um projeto de sistemas embarcados simulados, utilizando Python e Wokwi.
-
-### 📁 Estrutura mínima esperada
-
-```text
-/project
- ├── src/
- │   └── main.py        # Código principal do projeto
- ├── wokwi.toml         # Configuração da simulação
- ├── diagram.json       # Circuito no Wokwi
- └── README.md          # Explicação do seu projeto
-```
-
-> Você pode expandir essa estrutura se desejar, desde que mantenha os arquivos essenciais.
-
-### 🛠 Como Desenvolver seu Projeto
-
-O desenvolvimento acontece principalmente nos arquivos abaixo:
-
-#### 1️⃣ src/main.py
-
-- Código Python executado na simulação
-- Implementa a lógica do sistema embarcado
-- Exemplos: controle de LEDs, leitura de sensores, estados, temporizações, etc.
-
-#### 2️⃣ diagram.json
-
-- Define o hardware virtual do projeto
-- Componentes como:
-  - LEDs
-  - Botões
-  - Sensores
-  - Placa microcontroladora
-
-#### 3️⃣ wokwi.toml
-
-- Configura a simulação:
-  - Tipo de placa
-  - Framework
-  - Dependências adicionais
-
-#### 4️⃣ Commit e Push
-
-Após suas alterações:
-
-```bash
-git add .
-git commit -m "Descrição clara do que foi feito"
-git push
-```
-### ⚙ Execução Automática (GitHub Actions)
-
-A cada push, o GitHub Actions irá automaticamente:
-
-- Executar o pipeline de build
-- Rodar a simulação via Wokwi CLI
-- Validar que o projeto executa sem erros
-
-### 📌 Caso algo falhe:
-
-- Vá até a aba Actions
-- Analise os logs da execução
-- Corrija e envie novamente
-
-## 📊 Critérios de Avaliação
-
-Esta etapa será avaliada considerando:
-
-- Funcionamento correto da simulação
-- Código organizado e legível
-- Estrutura de arquivos correta
-- Uso adequado do Wokwi
-- Commits claros e bem descritos
-- Projeto executando sem falhas nas Actions
-
----
-
-## 📎 Submissão Final
-
-Após concluir o desenvolvimento:
-
-1. Verifique se o projeto **executa sem erros** nas GitHub Actions  
-2. Confirme que todos os arquivos obrigatórios estão presentes  
-3. Copie o link do **seu repositório no GitHub**
-
-📤 Envie o link conforme as orientações do processo seletivo na plataforma **Moodle**.
-
----
-
-## 📝 Relatório do Candidato
-
-O arquivo **`README.md` do seu repositório** deve ser utilizado como o  
-**relatório final do desafio técnico**.
-
-Preencha todas as seções abaixo de forma **clara, objetiva e técnica**.
-
-> 💡 **Dica importante**  
-> Não é necessário um relatório extenso.  
-> O principal critério é demonstrar **clareza nas decisões técnicas**, organização e entendimento do sistema embarcado desenvolvido.
-
----
 
 ### 👤 Identificação do Candidato
 
-- **Nome completo:**  
-- **GitHub:**  
+- **Nome: Lucas Vinicius Santos Leonel**  
+- **GitHub: github.com/lucasvinisan**  
 
 ---
 
 ## 1️⃣ Visão Geral da Solução
 
-Descreva, em poucas palavras:
+`Objetivo:`
 
-- Qual é o objetivo do seu projeto  
-- O que o sistema embarcado simulado faz  
-- Como o usuário interage com ele (se aplicável)
+ Simular o sistema de temperatura de um motor e gerar todas as temperaturas em um intervalo (para, posteriormente, ser usado na implemetação de algoritmos preditivos). 
 
+`O que o Sistema Faz: ` 
+
+ No curso de Análise Preditiva de Dados de Sensores na (Unidade 1: Modelos Preditivos: Regressão e Séries Temporais) foi descrito uma implementação de uma série temporal, onde foi utilizado uma base de dados simulando temperaturas de um sensor. Diante disso, a minha solução foi criar um sistema de medição de temperatura de um motor, verificando a temperatura em determinado horários e as classificando em escalas de (Normal, Alerta e Perigo) para simular um senário real. Ao final da simulação, é gerado um arquivo CSV com todas as temperaturas e os horários observados na simulação. 
+
+
+`Interação do Usuário com Sistema:`
+
+ Ao realizar o inicio da simulção o usuário tem a posibilidade de interagir com  o sistema clicando no sensor de temperatura e modifando ela de acordo com a barra de temperatura.  
+
+ **Realizando Modificações no Projeto**:
+
+ Se o usuário desejar realizar alguma modifcação, então ele deve seguir os seguintes passos: 
+
+ * Passo 1: 
+   ```
+      cd /workspaces/Iot_LucasLeonel && python watch.py  (IoT_LucasLeonel -> nome do Diretorio)
+
+   ```
+ * Passo 2: 
+ 
+   ```
+      FAz alguma modifcação no aqruivo src/main.py 
+
+   ```
+
+ * Passo 3:
+
+   ```
+       Salvar com Ctrl + S.  
+
+   ```
+
+* Passo 4: 
+
+A Mensagem de modificação que aparecerá no terminal: 
+
+   ```
+       Mudança detectada: ./src/main.py
+       fs.bin gerado com sucesso! 
+   ```
+
+  
+* Passso 5: 
+
+   ***No Wokwi, clicar em ■ Stop e depois ▶ Play para carregar o novo fs.bin***
 ---
 
 ## 2️⃣ Arquitetura do Sistema Embarcado
 
-Explique a arquitetura lógica do seu projeto, abordando:
-
 - Fluxo principal do programa (`main.py`)  
-- Estrutura de estados, loops ou temporizações  
-- Como os componentes interagem entre si  
+```
+inicializar()
+     ↓
+inicializar_csv()
+     ↓
+loop principal [while cont <= 100] (Pegar apenas 100 temperaturas) 
+     ↓
+ler_temperatura() → classificar_status() → obter_timestamp()
+     ↓
+atualizar_display() e o controlar_atuadores()
+     ↓
+salvar_buffer() → (a cada 10 leituras das temperaturas são gravas no CSV)
+     ↓
+finalizar()
+```
 
-Se desejar, utilize tópicos ou um pequeno diagrama em texto.
+A estrutura dos Estados: 
+O siste,a desenolvido atua em três estados com base em temperaturas que são lidas pelo sensor de temperatura. 
+
+- Estrutura de estados, loops ou temporizações  
+
+| ESTADO  | INTERVALO |AÇÕES |
+| ------------- |:-------------:|:-------------:|
+| Normal      | 0°C - 40°C     |LED VERDE + OLED|
+| ALERTA      | 41°C - 70°C     | LED AMARELO + OLED|
+| PERIGO      | > 70     | LED VERMELHO + BUZZER + ROLÉ + OLED |
+
+- Interação dos Componentes  
+
+A Interação realizada entre os componentes: a cada iteração o sensor fornece a temperatura, que define o estado, que por sua vez controla simultaneamente o display OLED, os LEDs, o buzzer e o relé. 
 
 ---
 
 ## 3️⃣ Componentes Utilizados na Simulação
 
-Liste os principais componentes definidos no `diagram.json`, por exemplo:
+Os principais componentes definidos no `diagram.json`:
 
-- Tipo de placa utilizada  
-- LEDs, botões, sensores, atuadores, etc.  
-- Função de cada componente no sistema  
+| COMPONENNTES  | IDENTIFICADOR | FUNÇÂO |
+| ------------- |:-------------:| :-------------:|
+| ESP32 DevKit C v4      | `esp`     |Microcontrolador principal, executa o MicroPython|
+| DS18B20    | `temp1`     |Sensor de temperatura digital via protocolo OneWire|
+| Display OLED SSD1306    | `oled1`     |Exibe temperatura, status e horário em tempo real|
+| LED vermelho    | `led1`     |Indica status PERIGO (>70°C)|
+| LED amarelo    | `led2`     |Indica status Alerta (41–70°C)|
+| LED verde   | `led3`     |Indica status Normal (0–40°C)|
+| Buzzer   | `bz1`     |Emite alerta sonoro em caso de PERIGO|
+| Módulo Relé   | `relay1`     |Simula desligamento do motor em caso de PERIGO|
+| Resistores 220Ω   | `r1,r2,r3`     |Limitadores de corrente dos LEDs|
+| Resistor 4700Ω   | `r4`     |Pull-up obrigatório para o barramento OneWire do DS18B20|
+
 
 ---
 
 ## 4️⃣ Decisões Técnicas Relevantes
 
-Explique brevemente decisões importantes tomadas durante o desenvolvimento, como:
+ Tomadas de decisões durante o desenvolvimento:
 
-- Organização do código  
-- Uso de funções, estados ou constantes  
-- Estratégias para temporização ou controle lógico  
+- **Organização**: o código foi dividido em funções (`ler_temperatura`, `classificar_status`, `controlar_atuadores`, ...), facilitando manutenção e leitura.
+
+- **Constantes**: `SALVAR_A_CADA` e `ARQUIVO_CSV` foram definidos no topo do arquivo para centralizar configurações.
+
+- **Buffer de escrita**: as leituras são acumuladas em memória e gravadas no CSV a cada 10 registros, reduzindo operações de escrita no sistema de arquivos.
+
+- **CSV**: o formato CSV com cabeçalho `timestamp`,`temperatura`,`status` foi escolhido para permitir análise posterior com ferramentas como pandas, Excel ou qualquer biblioteca de série temporal.
+
+- **Resistor pull-up**: Foi utilizado um resistor de pull-up na linha de dados do DS18B20, com o valor de 4.7kΩ.
+
+- **Gerando o Arquivo fs.bin**: o Wokwi requer um binário LittleFS `fs.bin` para carregar os arquivos .py na simulação. Como o `mklittlefs` não estava disponível no Dev Container, foi utilizada a biblioteca `littlefs-python` para gerar o binário diretamente via Python, adaptando o watch.py para gerar o fs.bin automaticamente a cada alteração nos arquivos fonte.
+
+
+- **Modificações Realizadas no Dev Container**: 
+
+
+Instalação da biblioteca `littlefs-python` para geração do `fs.bin`:
+   
+   ```
+      pip install littlefs-python --break-system-packages
+   ```
+
+Instalação da biblioteca `watchdog` para monitoramento automático da pasta `src/`:   
+   
+   ```
+      pip install watchdog --break-system-packages
+   ```
+
+- **Modificações Realizadas no wokwi.toml**:
+
+ Esse modificação foi necessária, para definidir o sistema de arquivos da simulação, indicando ao Wokwi que deve montar um volume `LittleFS` a partir do arquivo `binaries/fs.bin`
+   
+   ```
+      [fs]
+      type = "littlefs"
+      image = "binaries/fs.bin"
+   ```
+ **Arquivo ssd1306.py adicionado no diretório /src**:
+
+  É a biblioteca do display OLED SSD1306 para MicroPython. Ela fornece as funções para controlar o display, como fill(), text() e show(), que são usadas no main.py para exibir as informações na tela
 
 ---
 
@@ -295,37 +168,74 @@ Explique brevemente decisões importantes tomadas durante o desenvolvimento, com
 
 Descreva o comportamento final do sistema:
 
-- O que funciona corretamente  
-- Quais requisitos foram atendidos  
-- Resultado observado na simulação do Wokwi  
+**O que funciona corretamente:**
+
+* Leitura contínua da temperatura via sensor DS18B20 ✅
+
+* `Classificação automática em 3 estados` (Normal, Alerta e PERIGO) ✅
+
+* `Atualização em tempo real` do display OLED com temperatura, status e horário ✅
+
+*  Acionamento correto dos `LEDs` de acordo com o estado ✅
+
+*  Disparo do `buzzer` e `relé` exclusivamente no estado PERIGO ✅
+
+*  `Registro das leituras` em arquivo CSV com timestamp do RTC ✅
+
+*   `Geração automática do fs.bin` ✅
+
+**Requisitos atendidos:**
+
+* Sistema embarcado funcional simulado no Wokwi ✅
+
+* Persistência de dados em CSV para análise posterior ✅
+
+* Código organizado em funções com responsabilidade única ✅
+
+* Interação entre múltiplos componentes de hardware ✅
+
+**Resultado observado na simulação:**
+
+* O display OLED exibe corretamente a temperatura, status e horário a cada iteração
+
+* Os LEDs alternam conforme a temperatura é modificada pela barra do sensor no Wokwi
+
+* O buzzer e o relé são acionados quando a temperatura ultrapassa 70°C
+
+* O terminal exibe as leituras no formato data | horario | Status (Normal | ALERTA | PERIGO)
+
+* Ao final das 100 iterações, o CSV é impresso no terminal e o display exibe "Simulacao Concluida!"
 
 ---
 
-## 6️⃣ Comentários Adicionais (Opcional)
+## 6️⃣ Comentários Adicionais
 
-Utilize este espaço para comentar, se desejar:
+- **Dificuldades**
 
-- Dificuldades encontradas  
-- Limitações da solução  
-- Melhorias que você faria com mais tempo  
-- Principais aprendizados durante o desafio  
+O projeto foi desefiador, pois não tive muito contado com desenvolvimento de embarcados (Em poucas ocasiões). O primeiro barreira encontrada, sem sombra de duvidas, foi realizar as alterações necessárias para que o ambiente do vscode (IDE UTILIZADA), para que a simulção fosse relizada de forma correta. Algumas horas foram dedicadas a isso até que esse desafio fosse superado. Ao longo do processo de construção da solução fui encontrando alguns desafios de implementação, que também foram superdas com algumas horas de dedicação. Por fim, implementar um projeto de embarcados do zero e vê-lo funcionando foi algo interessante e que irá contribuir com a minha formação profissional.  
+
+- **Limitações da solução** 
+
+A Data tem que ser definida de forma manual, pois as implementações com wifi não deram certo. Além disso, o arquivo é gerado para 100 observações (Número escolhido só para demostra a funcionalidade da solução). Por fim, os dados poderiam estar sendo enviados para um diretório online para deixar o projeto mais robusto. 
+
+
+- **Melhorias que seriam feitas com mais tempo** 
+
+* **Código:**
+
+     - Substituir o loop fixo de 100 iterações por um loop infinito com `KeyboardInterrupt`
+     
+     - Adicionar média móvel das ultimas leituras realizadas 
+
+* **WIFI**:
+     - Enviar dados via Wi-Fi para um servidor `HTTP`
+     
+     - Enviar alertas via e-mail quando atingir estado `PERIGO`
+
+
+
+- **Principais Aprendizados:** 
+
+O priniciapl aprendizado foi os conhecimentos sobre embarcados que foram adquiridos (Tanto nos cursos realizados na primeira etapa do PNAAT) quando na implementação dessa solução. Uma área muito interessante e que tem várias aplicabilidades. Desenvolver esse projeto, com toda certeza, contribui de forma forma considerável no meu aprendizado e no desenvolvimento profissional. 
 
 ---
-
-> ✅ Este relatório faz parte da avaliação técnica.  
-> Clareza, objetividade e organização são tão importantes quanto o funcionamento do código.
-
----
-
-## 🆘 Suporte
-
-Em caso de dúvidas:
-
-- Consulte o material dos cursos EAD
-- Leia atentamente este README
-- Analise os logs das GitHub Actions
-- Utilize os canais oficiais para contato com os instrutores
-
-Boa sorte no processo seletivo.
-Mostre sua capacidade de pensar como um engenheiro de sistemas embarcados.
-****

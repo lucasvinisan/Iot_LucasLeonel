@@ -2,23 +2,24 @@
     "name": "Pyton Enviroment",
     "image": "mcr.microsoft.com/devcontainers/python:3.13-bookworm",
     "features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {} 
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {} 
     },
-	"postCreateCommand": "pip install mpremote",
+    "postCreateCommand": "pip install mpremote watchdog && sudo apt-get update && sudo apt-get install -y git cmake build-essential && git clone --recurse-submodules https://github.com/earlephilhower/mklittlefs.git /tmp/mklittlefs && cd /tmp/mklittlefs && make dist && sudo cp mklittlefs /usr/local/bin/",
+    "postStartCommand": "python /workspaces/Iot_LucasLeonel/watch.py &",
 
     // Configure tool-specific properties.
-	"customizations": {
-		// Configure properties specific to VS Code.
-		"vscode": {
-			"settings": {},
-			"extensions": [
-				"streetsidesoftware.code-spell-checker",
+    "customizations": {
+        // Configure properties specific to VS Code.
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "streetsidesoftware.code-spell-checker",
                 "ms-python.python",
-				"wokwi.wokwi-vscode"
-			]
-		}
-	},
+                "wokwi.wokwi-vscode"
+            ]
+        }
+    },
 
-	"privileged": true,
-	// "remoteUser": "root"
+    "privileged": true
+    // "remoteUser": "root"
 }
