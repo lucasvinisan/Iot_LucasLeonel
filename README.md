@@ -1,12 +1,9 @@
----
-
 
 ### 👤 Identificação do Candidato
 
 - **Nome: Lucas Vinicius Santos Leonel**  
 - **GitHub: github.com/lucasvinisan**  
 
----
 
 ## 1️⃣ Visão Geral da Solução
 
@@ -236,6 +233,5 @@ A Data tem que ser definida de forma manual, pois as implementações com wifi n
 
 - **Principais Aprendizados:** 
 
-O priniciapl aprendizado foi os conhecimentos sobre embarcados que foram adquiridos (Tanto nos cursos realizados na primeira etapa do PNAAT) quando na implementação dessa solução. Uma área muito interessante e que tem várias aplicabilidades. Desenvolver esse projeto, com toda certeza, contribui de forma forma considerável no meu aprendizado e no desenvolvimento profissional. 
+O priniciapal aprendizado foi os conhecimentos sobre embarcados que foram adquiridos (Tanto nos cursos realizados na primeira etapa do PNAAT) quando na implementação dessa solução. Uma área muito interessante e que tem várias aplicabilidades. Desenvolver esse projeto, com toda certeza, contribui de forma considerável no meu aprendizado e no meu desenvolvimento profissional. 
 
----
