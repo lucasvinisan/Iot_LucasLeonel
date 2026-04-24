@@ -4,11 +4,12 @@
 - **GitHub: github.com/lucasvinisan**  
 
 
-**SIMULAÇÂO NO VS CODE**
+**SIMULAÇÂO VSCODE**
 
 ![Imagem da Simulação.](img/simulacao_vscode.jpg)
 
-**SAÍDA**
+**SAÍDA print do Arquivo CSV**
+
 ![Imagem da Simulação.](img/saida.jpg)
 
 ## 1️⃣ Visão Geral da Solução
