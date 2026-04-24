@@ -213,11 +213,11 @@ Descreva o comportamento final do sistema:
 
 - **Dificuldades**
 
-O projeto foi desefiador, pois não tive muito contado com desenvolvimento de embarcados (Em poucas ocasiões). O primeiro barreira encontrada, sem sombra de duvidas, foi realizar as alterações necessárias para que o ambiente do vscode (IDE UTILIZADA), para que a simulção fosse relizada de forma correta. Algumas horas foram dedicadas a isso até que esse desafio fosse superado. Ao longo do processo de construção da solução fui encontrando alguns desafios de implementação, que também foram superdas com algumas horas de dedicação. Por fim, implementar um projeto de embarcados do zero e vê-lo funcionando foi algo interessante e que irá contribuir com a minha formação profissional.  
+O projeto foi desefiador, pois não tive muito contado com desenvolvimento de embarcados (Em poucas ocasiões). O primeiro barreira encontrada, sem sombra de duvidas, foi realizar as alterações necessárias para que a simulação no vscode fosse realizada de forma correta. Algumas horas foram dedicadas a essta etapa até que esse desafio fosse superado. Ao longo da construção dessa solução foram encontrandos alguns desafios de implementação, como algumas configurações de dispotivos e alguns bibliotecas auxiliares que tinham que ser usadas para implementação de disposistivos como (OLED). Por fim, implementar um projeto de embarcados foi uma excelente experiência, que irá contribuir de forma postiva com a minha formação profissional.  
 
 - **Limitações da solução** 
 
-A Data tem que ser definida de forma manual, pois as implementações com wifi não deram certo. Além disso, o arquivo é gerado para 100 observações (Número escolhido só para demostra a funcionalidade da solução). Por fim, os dados poderiam estar sendo enviados para um diretório online para deixar o projeto mais robusto. 
+A Data tem que ser definida de forma manual, pois as implementações com wifi não foram bem sucedidas. Além disso, o arquivo é gerado para 100 observações (Número escolhido só para demostra a funcionalidade da solução). Por fim, os dados poderiam estar sendo enviados para um diretório online para deixar o projeto mais robusto. 
 
 
 - **Melhorias que seriam feitas com mais tempo** 
