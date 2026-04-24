@@ -1,4 +1,3 @@
----
 
 
 ### 👤 Identificação do Candidato
@@ -6,7 +5,13 @@
 - **Nome: Lucas Vinicius Santos Leonel**  
 - **GitHub: github.com/lucasvinisan**  
 
----
+
+**SIMULAÇÂO NO VS CODE**
+
+![Imagem da Simulação.](img/simulacao_vscode.jpg)
+
+**SAÍDA**
+![Imagem da Simulação.](img/saida.jpg)
 
 ## 1️⃣ Visão Geral da Solução
 
@@ -238,4 +243,3 @@ A Data tem que ser definida de forma manual, pois as implementações com wifi n
 
 O priniciapl aprendizado foi os conhecimentos sobre embarcados que foram adquiridos (Tanto nos cursos realizados na primeira etapa do PNAAT) quando na implementação dessa solução. Uma área muito interessante e que tem várias aplicabilidades. Desenvolver esse projeto, com toda certeza, contribui de forma forma considerável no meu aprendizado e no desenvolvimento profissional. 
 
----
