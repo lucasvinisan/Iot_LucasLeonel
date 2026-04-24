@@ -26,32 +26,29 @@
 
  * Passo 1: 
    ```
-      cd /workspaces/Iot_LucasLeonel && python watch.py  (IoT_LucasLeonel -> nome do Diretorio)
-
+   cd /workspaces/Iot_LucasLeonel && python watch.py  (IoT_LucasLeonel -> nome do Diretorio)
    ```
  * Passo 2: 
  
    ```
-      FAz alguma modifcação no aqruivo src/main.py 
-
+   FAz alguma modifcação no aqruivo src/main.py 
    ```
 
  * Passo 3:
 
    ```
-       Salvar com Ctrl + S.  
-
+   Salvar com Ctrl + S.  
    ```
 
-* Passo 4: 
+ * Passo 4: 
 
-A Mensagem de modificação que aparecerá no terminal: 
 
    ```
-       Mudança detectada: ./src/main.py
-       fs.bin gerado com sucesso! 
+   Mudança detectada: ./src/main.py
+   fs.bin gerado com sucesso! 
    ```
 
+A Mensagem de modificação que aparecerá no terminal 
   
 * Passso 5: 
 
