@@ -20,12 +20,12 @@
 
 `O que o Sistema Faz: ` 
 
- No curso de Análise Preditiva de Dados de Sensores na (Unidade 1: Modelos Preditivos: Regressão e Séries Temporais) foi descrito uma implementação de uma série temporal, onde foi utilizado uma base de dados simulando temperaturas de um sensor. Diante disso, a minha solução foi criar um sistema de medição de temperatura de um motor, verificando a temperatura em determinado horários e as classificando em escalas de (Normal, Alerta e Perigo) para simular um senário real. Ao final da simulação, é gerado um arquivo CSV com todas as temperaturas e os horários observados na simulação. 
+ No curso de Análise Preditiva de Dados de Sensores na (Unidade 1: Modelos Preditivos: Regressão e Séries Temporais) foi descrito uma implementação de uma série temporal, onde foi utilizado uma base de dados simulando temperaturas de um sensor. Diante disso, a minha solução foi criar um sistema de medição de temperatura de um motor, verificando a temperatura em determinado horários e as classificando em escalas de (Normal, Alerta e Perigo) para simular um cenário real. Ao final da simulação, é gerado um arquivo CSV com todas as temperaturas e os horários observados na simulação. 
 
 
 `Interação do Usuário com Sistema:`
 
- Ao realizar o inicio da simulção o usuário tem a posibilidade de interagir com  o sistema clicando no sensor de temperatura e modifando ela de acordo com a barra de temperatura.  
+ No inicio da simulção o usuário tem a posibilidade de interagir com  o sistema clicando no sensor de temperatura e modifando ela de acordo com a barra de temperatura.  
 
  **Realizando Modificações no Projeto**:
 
@@ -33,8 +33,10 @@
 
  * Passo 1: 
    ```
-   cd /workspaces/Iot_LucasLeonel && python watch.py  (IoT_LucasLeonel -> nome do Diretorio)
+   touch /workspaces/Iot_LucasLeonel/src/main.py && python watch.py  (IoT_LucasLeonel -> nome do Diretorio)
    ```
+   Ele vai ficar rodando em um terminal separado. Para parar o watch.py é só apertar Ctrl + C no terminal que ele está rodando.
+   
  * Passo 2: 
  
    ```
@@ -49,13 +51,12 @@
 
  * Passo 4: 
 
-
    ```
    Mudança detectada: ./src/main.py
    fs.bin gerado com sucesso! 
    ```
-
-A Mensagem de modificação que aparecerá no terminal 
+ A Mensagem de modificação que aparecerá no terminal 
+ Ele já vai inserir as novas modificações no arquivo fs.bin
   
 * Passso 5: 
 
@@ -82,7 +83,7 @@ finalizar()
 ```
 
 A estrutura dos Estados: 
-O siste,a desenolvido atua em três estados com base em temperaturas que são lidas pelo sensor de temperatura. 
+O sistema desenvolvido atua em três estados com base em temperaturas que são lidas pelo sensor de temperatura. 
 
 - Estrutura de estados, loops ou temporizações  
 
@@ -159,6 +160,7 @@ Instalação da biblioteca `watchdog` para monitoramento automático da pasta `s
       type = "littlefs"
       image = "binaries/fs.bin"
    ```
+
  **Arquivo ssd1306.py adicionado no diretório /src**:
 
   É a biblioteca do display OLED SSD1306 para MicroPython. Ela fornece as funções para controlar o display, como fill(), text() e show(), que são usadas no main.py para exibir as informações na tela
@@ -213,29 +215,28 @@ Descreva o comportamento final do sistema:
 
 - **Dificuldades**
 
-O projeto foi desefiador, pois não tive muito contado com desenvolvimento de embarcados (Em poucas ocasiões). O primeiro barreira encontrada, sem sombra de duvidas, foi realizar as alterações necessárias para que a simulação no vscode fosse realizada de forma correta. Algumas horas foram dedicadas a essta etapa até que esse desafio fosse superado. Ao longo da construção dessa solução foram encontrandos alguns desafios de implementação, como algumas configurações de dispotivos e alguns bibliotecas auxiliares que tinham que ser usadas para implementação de disposistivos como (OLED). Por fim, implementar um projeto de embarcados foi uma excelente experiência, que irá contribuir de forma postiva com a minha formação profissional.  
+O projeto foi desafiador, pois tive pouco contato prévio com o desenvolvimento de sistemas embarcados. A primeira barreira, sem dúvida, foi configurar o ambiente no VS Code para que a simulação ocorresse corretamente; foram necessárias algumas horas de dedicação até superar essa etapa. Durante a construção da solução, surgiram desafios de implementação, como a configuração de periféricos e a integração de bibliotecas auxiliares para dispositivos como o display OLED. Por fim, desenvolver este projeto foi uma excelente experiência prática que contribuirá positivamente para a minha formação profissional. 
 
 - **Limitações da solução** 
 
-A Data tem que ser definida de forma manual, pois as implementações com wifi não foram bem sucedidas. Além disso, o arquivo é gerado para 100 observações (Número escolhido só para demostra a funcionalidade da solução). Por fim, os dados poderiam estar sendo enviados para um diretório online para deixar o projeto mais robusto. 
+A data precisa ser definida manualmente, uma vez que a integração via Wi-Fi não foi implementada nesta etapa. O arquivo gerado contém 100 observações, um volume definido apenas para demonstrar a funcionalidade da solução. Como melhoria futura, os dados poderiam ser enviados para um repositório na nuvem, o que tornaria o projeto mais robusto. 
 
 
 - **Melhorias que seriam feitas com mais tempo** 
 
-* **Código:**
+     Código:
 
      - Substituir o loop fixo de 100 iterações por um loop infinito com `KeyboardInterrupt`
      
      - Adicionar média móvel das ultimas leituras realizadas 
 
-* **WIFI**:
+     WIFI:
+
      - Enviar dados via Wi-Fi para um servidor `HTTP`
      
      - Enviar alertas via e-mail quando atingir estado `PERIGO`
 
 
-
 - **Principais Aprendizados:** 
 
-O priniciapal aprendizado foi os conhecimentos sobre embarcados que foram adquiridos (Tanto nos cursos realizados na primeira etapa do PNAAT) quando na implementação dessa solução. Uma área muito interessante e que tem várias aplicabilidades. Desenvolver esse projeto, com toda certeza, contribui de forma considerável no meu aprendizado e no meu desenvolvimento profissional. 
-
+O principal ganho deste projeto foi o conhecimento sobre sistemas embarcados, adquirido tanto nos cursos da primeira etapa do PNAAT quanto na implementação prática desta solução. Sendo essa uma área extremamente interessante e com diversas aplicabilidades. Desenvolver este projeto, com toda a certeza, contribuiu de forma considerável para a minha bagagem técnica e para o meu desenvolvimento profissional.
