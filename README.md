@@ -20,16 +20,16 @@
 
 `O que o Sistema Faz: ` 
 
- No curso de Análise Preditiva de Dados de Sensores na (Unidade 1: Modelos Preditivos: Regressão e Séries Temporais) foi descrito uma implementação de uma série temporal, onde foi utilizado uma base de dados simulando temperaturas de um sensor. Diante disso, a minha solução foi criar um sistema de medição de temperatura de um motor, verificando a temperatura em determinado horários e as classificando em escalas de (Normal, Alerta e Perigo) para simular um cenário real. Ao final da simulação, é gerado um arquivo CSV com todas as temperaturas e os horários observados na simulação. 
+ No curso de Análise Preditiva de Dados de Sensores `Unidade 1: Modelos Preditivos: Regressão e Séries Temporais`, foi descrita uma implementação de uma série temporal, onde foi utilizada uma base de dados simulando temperaturas de um sensor. Diante disso, a minha solução foi criar um sistema de `medição de temperatura de um motor`, verificando a temperatura em determinados horários e classificando-as em escalas (`Normal`, `Alerta` e `Perigo`) para simular um cenário real. Ao final da simulação, é gerado um arquivo CSV com todas as temperaturas e os horários observados.
 
 
 `Interação do Usuário com Sistema:`
 
- No inicio da simulção o usuário tem a posibilidade de interagir com  o sistema clicando no sensor de temperatura e modifando ela de acordo com a barra de temperatura.  
+No `início da simulação`, o usuário tem a possibilidade de interagir com o sistema clicando no sensor de temperatura e modificando-a de acordo com a barra de temperatura.
 
  **Realizando Modificações no Projeto**:
 
- Se o usuário desejar realizar alguma modifcação, então ele deve seguir os seguintes passos: 
+ Se o usuário desejar realizar alguma modificação, então ele deve seguir os seguintes passos: 
 
  * Passo 1: 
    ```
@@ -215,11 +215,11 @@ Descreva o comportamento final do sistema:
 
 - **Dificuldades**
 
-O projeto foi desafiador, pois tive pouco contato prévio com o desenvolvimento de sistemas embarcados. A primeira barreira, sem dúvida, foi configurar o ambiente no VS Code para que a simulação ocorresse corretamente; foram necessárias algumas horas de dedicação até superar essa etapa. Durante a construção da solução, surgiram desafios de implementação, como a configuração de periféricos e a integração de bibliotecas auxiliares para dispositivos como o display OLED. Por fim, desenvolver este projeto foi uma excelente experiência prática que contribuirá positivamente para a minha formação profissional. 
+O projeto foi desafiador, pois tive pouco contato prévio com o desenvolvimento de sistemas embarcados. A primeira barreira, sem dúvida, foi configurar o ambiente no VS Code para que a simulação ocorresse corretamente; foram necessárias algumas horas de dedicação até superar essa etapa. Durante a construção da solução, surgiram desafios de implementação, tais como a configuração de periféricos e a integração de bibliotecas auxiliares para dispositivos como o display OLED. Por fim, desenvolver este projeto foi uma excelente experiência prática, que contribuirá positivamente para a minha formação profissional.
 
 - **Limitações da solução** 
 
-A data precisa ser definida manualmente, uma vez que a integração via Wi-Fi não foi implementada nesta etapa. O arquivo gerado contém 100 observações, um volume definido apenas para demonstrar a funcionalidade da solução. Como melhoria futura, os dados poderiam ser enviados para um repositório na nuvem, o que tornaria o projeto mais robusto. 
+A data precisa ser definida manualmente, uma vez que a integração via Wi-Fi não foi implementada nesta etapa. O arquivo gerado contém 100 observações, volume este definido apenas para demonstrar a funcionalidade da solução. Como melhoria futura, os dados poderiam ser enviados para um repositório na nuvem, o que tornaria o projeto mais robusto.
 
 
 - **Melhorias que seriam feitas com mais tempo** 
